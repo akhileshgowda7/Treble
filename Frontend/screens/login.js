@@ -7,10 +7,15 @@ export default function Login() {
     <View style={styles.layout}>
       <View style={styles.header}>
         <Text style={styles.indigo}>Treble</Text>
+        {/* <Text style={styles.black}>Login</Text> */}
       </View>
       <View style={styles.input}>
-        <Input placeholder="username" />
-        <Input placeholder="Password" secureTextEntry={true} />
+        <Input placeholder="username" style={styles.username} />
+        <Input
+          placeholder="Password"
+          style={styles.password}
+          secureTextEntry={true}
+        />
       </View>
       <View style={styles.loginButton}>
         <Button
@@ -54,8 +59,19 @@ export default function Login() {
 
 const styles = StyleSheet.create({
   layout: { flex: 1 },
-  input: { width: 350, marginTop: 50 },
-  loginButton: { flexDirection: 'row', justifyContent: 'space-around' },
-  header: { marginTop: 200, flexDirection: 'row', justifyContent: 'center' },
+  header: {
+    height: 110,
+    width: 335,
+    top: 200,
+    left: 20,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  username: { width: 283, Height: 40, marginTop: 220, marginLeft: 46 },
+  password: { width: 283, height: 40, marginTop: 5, marginLeft: 46 },
   indigo: { color: 'indigo', fontSize: 100 },
+  label: { width: 279, height: 47, top: 295, left: 144 },
+  black: { fontSize: 30, marginTop: 20 },
+  loginButton:{flexDirection:'row', justifyContent:'space-around'}
 });

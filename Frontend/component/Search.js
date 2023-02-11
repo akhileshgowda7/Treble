@@ -14,10 +14,12 @@ const updateSearch = (search) => {
 return (
   <View style={styles.view}>
     <SearchBar
-      placeholder="Type Here..."
+      placeholder="What are you looking for ..."
       onChangeText={updateSearch}
       value={search}
       placeholderTextColor='white'
+      // containerStyle={{backgroundColor:'white'}}
+      // lightTheme='false'
     />
   </View>
 );

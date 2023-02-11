@@ -1,78 +1,69 @@
-import React from 'react';
-import { Tab, Text, TabView } from '@rneui/themed';
+import * as React from 'react';
+import { Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Profile from '../screens/Profile';
+import HomeScreen from '../screens/homeScreen';
 import BrowseScreen from '../screens/browseScreen';
-import Login from '../screens/login';
+import Message from '../screens/Message';
 
-const Tabs = () => {
-  const [index, setIndex] = React.useState(0);
+const Tab = createBottomTabNavigator();
 
+function Tabs() {
   return (
-    <>
-      <Tab
-        value={index}
-        onChange={(e) => setIndex(e)}
-        indicatorStyle={{
-          backgroundColor: 'white',
+    <Tab.Navigator
+      initialRouteName="Feed"
+      screenOptions={{
+        tabBarActiveTintColor: '#e91e63',
+      }}
+    >
+      <Tab.Screen
+        name="Feed"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="home" color={color} size={size} />
+          ),
         }}
-        variant="default"
-        backgroundColor="black"
-        containerStyle={{
-          flexDirection: 'row',
-          justifyContent: 'space-around',
-          height: 75,
+      />
+      <Tab.Screen
+        name="BrowseScreen"
+        component={BrowseScreen}
+        options={{
+          tabBarLabel: 'Browse',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons
+              name="text-search"
+              color={color}
+              size={size}
+            />
+          ),
         }}
-        // scrollable="True"
-      >
-        <Tab.Item
-          title="Home"
-          titleStyle={{ fontSize: 11, color: 'white' }}
-          icon={{ name: 'home', type: 'font-awesome', color: 'white' }}
-          containerStyle={{}}
-        />
-        <Tab.Item
-          title="Search"
-          titleStyle={{
-            fontSize: 11,
-            color: 'white',
-          }}
-          icon={{ name: 'search', type: 'font-awesome', color: 'white' }}
-          onPress={() => {
-            <BrowseScreen />;
-          }}
-        />
-        <Tab.Item
-          title="Post"
-          titleStyle={{ fontSize: 11, color: 'white' }}
-          icon={{ name: 'plus', type: 'font-awesome', color: 'white' }}
-        />
-        <Tab.Item
-          title="Chat"
-          titleStyle={{ fontSize: 11, color: 'white' }}
-          icon={{ name: 'comment', type: 'font-awesome', color: 'white' }}
-        />
-        <Tab.Item
-          title="Profile"
-          titleStyle={{ fontSize: 11, color: 'white' }}
-          icon={{ name: 'user', type: 'font-awesome', color: 'white' }}
-          onPress={() => {
-            <Login />;
-          }}
-        />
-      </Tab>
-
-      {/* <TabView value={index} onChange={setIndex} animationType="spring">
-      <TabView.Item style={{ backgroundColor: 'red', width: '100%' }}>
-        <Text h1>Recent</Text>
-      </TabView.Item>
-      <TabView.Item style={{ backgroundColor: 'blue', width: '100%' }}>
-        <Text h1>Favorite</Text>
-      </TabView.Item>
-      <TabView.Item style={{ backgroundColor: 'green', width: '100%' }}>
-        <Text h1>Cart</Text>
-      </TabView.Item>
-    </TabView> */}
-    </>
+      />
+      <Tab.Screen
+        name="Message"
+        component={Message}
+        options={{
+          tabBarLabel: 'Message',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="message" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarLabel: 'Profile',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="account" color={color} size={size} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
   );
-};
+}
 
 export default Tabs;

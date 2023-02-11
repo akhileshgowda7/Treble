@@ -7,23 +7,23 @@ const Cards = () => {
     <>
       <ScrollView>
         <View style={styles.container}>
-          <Card containerStyle={{ padding:'10%',flexGrow:1, backgroundColor:'black' }}>
-            <Card.Title style={{color:'#FFFFFF'}}>ARTISTS</Card.Title>
+          <Card containerStyle={{ backgroundColor:'orange', borderRadius:'11px',paddingVertical:'10%',paddingHorizontal:'14%' }}>
+            <Card.Title style={{color:'#FFFFFF',fontWeight: 'bold'}}>Artists</Card.Title>
           </Card>
-          <Card containerStyle={{ padding:'10%',backgroundColor:'black'}}>
-            <Card.Title style={{color:'#FFFFFF'}}>VOCALISTS</Card.Title>
+          <Card containerStyle={{ padding:'10%',backgroundColor:'blue', borderRadius:'25px',paddingVertical:'10%',paddingHorizontal:'12%' }}>
+            <Card.Title style={{color:'#FFFFFF',fontWeight: 'bold'}}>Vocalists</Card.Title>
           </Card>
-          <Card containerStyle={{ padding:'10%',flexGrow:1,backgroundColor:'black' }}>
-            <Card.Title style={{color:'#FFFFFF'}}>PRODUCER</Card.Title>
+          <Card containerStyle={{ backgroundColor:'green', borderRadius:'11px',paddingVertical:'10%',paddingHorizontal:'12%' }}>
+            <Card.Title style={{color:'#FFFFFF',fontWeight: 'bold'}}>Producer</Card.Title>
           </Card>
-          <Card containerStyle={{ padding:'10%',flexGrow:1 ,backgroundColor:'black'}}>
-            <Card.Title style={{color:'#FFFFFF'}}>COMPOSER</Card.Title>
+          <Card containerStyle={{  backgroundColor:'indigo', borderRadius:'11px',paddingVertical:'10%',paddingHorizontal:'11%'}}>
+            <Card.Title style={{color:'#FFFFFF',fontWeight: 'bold'}}>Composer</Card.Title>
           </Card>
-          <Card containerStyle={{ padding:'10%',flexGrow:1,backgroundColor:'black' }}>
-            <Card.Title style={{color:'#FFFFFF'}}>MANAGER</Card.Title>
+          <Card containerStyle={{backgroundColor:'red', borderRadius:'11px' ,paddingVertical:'10%',paddingHorizontal:'13%'}}>
+            <Card.Title style={{color:'#FFFFFF',fontWeight: 'bold'}}>Manager</Card.Title>
           </Card>
-          <Card containerStyle={{ padding:'10%' ,flexGrow:1,backgroundColor:'black'}}>
-            <Card.Title style={{color:'#FFFFFF'}}>STUDIO</Card.Title>
+          <Card containerStyle={{ backgroundColor:'violet', borderRadius:'11px',paddingVertical:'10%',paddingHorizontal:'14%'}}>
+            <Card.Title style={{color:'#FFFFFF',fontWeight: 'bold'}}>Studio</Card.Title>
           </Card>
         </View>
       </ScrollView>

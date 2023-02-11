@@ -12,10 +12,7 @@ import Tabs from './component/Tabs';
 export default function App() {
   return (
     <NavigationContainer>
-      <View style={styles.container}>
-        <BrowseScreen/>
         <Tabs style={styles.tabs}/>
-      </View>
     </NavigationContainer>
   );
 }

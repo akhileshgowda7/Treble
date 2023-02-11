@@ -7,10 +7,13 @@ import Cards from '../component/Cards';
 export default function BrowseScreen() {
   return (
     <View style={styles.layout}>
-      <View style={styles.heading}>
-        <Text h4 style={{color:'#FFFFFF',marginTop:'5%'}}>What are you Looking For?</Text>
+      <View style={styles.searchBar}>
+        <Text h4 style={{color:'white',marginLeft:'3%',fontWeight: 'bold'}}>Search</Text>
+      <SwitchComponent  />
       </View>
-      <SwitchComponent style={styles.searchBar} />
+      <View>
+        <Text h4 style={{color:'white',marginLeft:'3%', marginTop:'10%',fontWeight: 'bold'}}>Browse all</Text>
+      </View>
       <View>
         <Cards/>
       </View>
@@ -19,8 +22,8 @@ export default function BrowseScreen() {
 }
 
 const styles = StyleSheet.create({
-  layout: { flex: 1, marginTop: '20%', width: '100%',backgroundColor:'#9619B2' },
-  searchBar: { width: '100%' },
+  layout: { flex: 1, width: '100%',backgroundColor:'black' },
+  searchBar: { width: '100%',marginTop:'5%'},
   heading: {
     flexDirection: 'row',
     justifyContent: 'center',

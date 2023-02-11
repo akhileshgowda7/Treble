@@ -5,7 +5,8 @@ import { Header } from '@rneui/base';
 
 export default function HomeScreen() {
   return (
-    <View>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>HomeScreen!</Text>
     </View>
   );
 }
